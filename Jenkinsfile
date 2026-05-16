@@ -12,6 +12,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t flask-image .'
+                sh 'docker save -o /home/ubuntu/flask-image.tar flask-image'
             }
         }
 
